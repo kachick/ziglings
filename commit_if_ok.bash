@@ -10,4 +10,4 @@ tmpfile="$(mktemp)"
 
 # `zig build number` exit 0 even if faling the build!
 zig build "$exercise" 2>&1 | tee --append "$tmpfile"
-(grep -P '^PASSED:' < "$tmpfile") && git commit -a -m "OK \'zig build $exercise\`"
+(grep -P '^PASSED:' < "$tmpfile") && git commit -a -m "OK \`zig build $exercise\`"
