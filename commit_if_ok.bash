@@ -8,4 +8,4 @@ set -euo pipefail
 exercise="$1"
 
 # `zig build number` exit 0 even if faling the build!
-(zig build "$exercise" | grep -P '^PASSED:') && git commit -a -m "OK \'zig build $exercise\`"
+(zig build "$exercise" 2>&1 | grep -P '^PASSED:') && git commit -a -m "OK \'zig build $exercise\`"
